@@ -16,5 +16,5 @@ const quotes = [
 document.getElementById("quote").innerText = quotes[Math.floor(Math.random() * quotes.length)];
 
 // ===== 背景图 =====
-document.body.style.backgroundImage = "url('bg1.jpg')";
+document.body.style.backgroundImage = "url('bg2.jpg')";
 
