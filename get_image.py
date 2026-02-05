@@ -3,7 +3,7 @@ import requests
 from datetime import datetime, timedelta
 
 client_id = 'ecf33aee-a0be-4006-b30b-0b2ed158c8e9' # 替换成自己的
-one_day = (datetime.now() + timedelta(days=26)).strftime("%Y-%m-%d")
+one_day = (datetime.now() + timedelta(days=50)).strftime("%Y-%m-%d")
 url = 'https://api.momentumdash.com/feed/bulk?syncTypes=backgrounds&localDate={localDate}'
 
 headers = {
