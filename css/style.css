@@ -28,7 +28,7 @@ body {
 .time {
   font-family: 'Roboto Mono', monospace;
   /* clamp(最小值, 首选值, 最大值)：兼顾自适应和极端情况 */
-  font-size: 10vw; 
+  font-size: 9.5vw; 
   font-weight: 700;
   /* 字间距也用vw，和字体大小成比例 */
   letter-spacing: -0.3vw; 
@@ -37,21 +37,11 @@ body {
 }
 
 .quote {
-  margin-top: 1.5vw; /* 间距自适应 */
-  font-size: 1.5vw;
+  margin-top: 1.2vw; /* 间距自适应 */
+  font-size: 1.2vw;
   opacity: 0.9;
   letter-spacing: clamp(-0.5px, -0.1vw, -1.5px);
   font-weight: 600;
   font-family: 'Roboto Mono', monospace;
   max-width: 90vw; /* 限制最大宽度，防止超长文本溢出 */
-}
-
-/* 响应式兜底（针对极窄屏） */
-@media (max-width: 480px) {
-  .time {
-    font-size: clamp(30px, 15vw, 80px);
-  }
-  .quote {
-    font-size: clamp(14px, 4vw, 20px);
-  }
 }
