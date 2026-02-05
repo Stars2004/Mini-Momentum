@@ -1,5 +1,7 @@
 # Mini-Momentum
 
-Momentum 这个插件要收费，所以自己实现了一个 Mini 版本的。
+A lightweight alternative to Momentum, providing daily wallpapers, clock, and TODO list functionality.
 
-后续还会继续实现更多功能，包括 Todo List 等。
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
