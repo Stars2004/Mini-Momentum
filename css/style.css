@@ -28,7 +28,7 @@ body {
 .time {
   font-family: 'Roboto Mono', monospace;
   /* clamp(最小值, 首选值, 最大值)：兼顾自适应和极端情况 */
-  font-size: 9.5vw; 
+  font-size: 10vw; 
   font-weight: 700;
   /* 字间距也用vw，和字体大小成比例 */
   letter-spacing: -0.3vw; 
@@ -44,4 +44,35 @@ body {
   font-weight: 600;
   font-family: 'Roboto Mono', monospace;
   max-width: 90vw; /* 限制最大宽度，防止超长文本溢出 */
+}
+
+/* 更换背景按钮 */
+.change-bg-btn {
+  position: fixed;
+  top: 30px;
+  right: 30px;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+.change-bg-btn:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: scale(1.1);
+}
+
+.change-bg-btn svg {
+  width: 20px;
+  height: 20px;
 }

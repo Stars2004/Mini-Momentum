@@ -8,6 +8,16 @@
   <link href="./css/style.css" rel="stylesheet">
 </head>
 <body>
+  <!-- 更换背景按钮 -->
+  <button id="change-bg-btn" class="change-bg-btn" title="更换背景">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+      <circle cx="8.5" cy="8.5" r="1.5"></circle>
+      <polyline points="21 15 16 10 5 21"></polyline>
+    </svg>
+  </button>
+  <input type="file" id="bg-file-input" accept="image/*" style="display: none;">
+  
   <div class="container">
     <!-- 时间显示容器 -->
     <div id="time" class="time"></div>
