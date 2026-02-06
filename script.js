@@ -49,17 +49,31 @@ bgFileInput.addEventListener('change', (e) => {
 loadBackground();
 
 // ===== TODO 列表 =====
+const todoBtn = document.getElementById('todo-btn');
+const todoPanel = document.getElementById('todo-panel');
+const todoClose = document.getElementById('todo-close');
 const todoInput = document.getElementById('todo-input');
 const todoAddBtn = document.getElementById('todo-add');
 const todoList = document.getElementById('todo-list');
-const todoCount = document.getElementById('todo-count');
+
+// 打开面板
+todoBtn.addEventListener('click', () => {
+  todoPanel.classList.add('open');
+  todoInput.focus();
+});
+
+// 关闭面板
+todoClose.addEventListener('click', () => {
+  todoPanel.classList.remove('open');
+});
+
 // 从 localStorage 加载 TODO
 function loadTodos() {
   const todos = JSON.parse(localStorage.getItem('momentum_todos') || '[]');
   todoList.innerHTML = '';
   todos.forEach(todo => addTodoToDOM(todo.text, todo.completed));
-  updateCount();
 }
+
 // 保存 TODO 到 localStorage
 function saveTodos() {
   const todos = [];
@@ -70,14 +84,6 @@ function saveTodos() {
     });
   });
   localStorage.setItem('momentum_todos', JSON.stringify(todos));
-  updateCount();
-}
-// 更新任务计数
-function updateCount() {
-  const total = todoList.querySelectorAll('.todo-item').length;
-  const completed = todoList.querySelectorAll('.todo-item.completed').length;
-  const remaining = total - completed;
-  todoCount.innerText = remaining;
 }
 // 添加 TODO 到 DOM
 function addTodoToDOM(text, completed = false) {

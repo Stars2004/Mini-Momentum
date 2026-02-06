@@ -26,15 +26,23 @@
     <!-- 名言显示容器 -->
     <div id="quote" class="quote"></div>
   </div>
-  <!-- TODO 列表 -->
-  <div class="todo-container">
+  <!-- TODO 按钮 -->
+  <button id="todo-btn" class="todo-btn" title="待办事项">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M9 11l3 3L22 4" />
+      <path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11" />
+    </svg>
+  </button>
+
+  <!-- TODO 面板 -->
+  <div id="todo-panel" class="todo-panel">
     <div class="todo-header">
-      <h3>Focus</h3>
-      <span id="todo-count">0</span>
+      <span>FOCUS</span>
+      <button id="todo-close">×</button>
     </div>
     <ul id="todo-list"></ul>
-    <div class="todo-input-wrapper">
-      <input type="text" id="todo-input" placeholder="添加新任务..." autocomplete="off">
+    <div class="todo-footer">
+      <input type="text" id="todo-input" placeholder="添加任务...">
       <button id="todo-add">+</button>
     </div>
   </div>
