@@ -9,18 +9,16 @@ setInterval(updateTime, 1000);
 updateTime();
 
 // ===== 名言 =====
-const quotes = [
-  "专注，就是把一件事做到极致。",
-  "厚德、笃学、崇实、尚新。"
-];
-document.getElementById("quote").innerText = quotes[Math.floor(Math.random() * quotes.length)];
+const quotes = ["专注，就是把一件事做到极致。", "厚德、笃学、崇实、尚新。"];
+document.getElementById("quote").innerText =
+  quotes[Math.floor(Math.random() * quotes.length)];
 // ===== 背景图 =====
-const DEFAULT_BG = 'bg.jpg';
+const DEFAULT_BG = "bg.jpg";
 function setBackground(imageUrl) {
   document.body.style.backgroundImage = `url('${imageUrl}')`;
 }
 function loadBackground() {
-  const savedBg = localStorage.getItem('momentum_bg');
+  const savedBg = localStorage.getItem("momentum_bg");
   if (savedBg) {
     setBackground(savedBg);
   } else {
@@ -28,19 +26,19 @@ function loadBackground() {
   }
 }
 // 更换背景功能
-const changeBgBtn = document.getElementById('change-bg-btn');
-const bgFileInput = document.getElementById('bg-file-input');
-changeBgBtn.addEventListener('click', () => {
+const changeBgBtn = document.getElementById("change-bg-btn");
+const bgFileInput = document.getElementById("bg-file-input");
+changeBgBtn.addEventListener("click", () => {
   bgFileInput.click();
 });
-bgFileInput.addEventListener('change', (e) => {
+bgFileInput.addEventListener("change", (e) => {
   const file = e.target.files[0];
   if (file) {
     const reader = new FileReader();
     reader.onload = (event) => {
       const imageUrl = event.target.result;
       setBackground(imageUrl);
-      localStorage.setItem('momentum_bg', imageUrl);
+      localStorage.setItem("momentum_bg", imageUrl);
     };
     reader.readAsDataURL(file);
   }
@@ -49,46 +47,46 @@ bgFileInput.addEventListener('change', (e) => {
 loadBackground();
 
 // ===== TODO 列表 =====
-const todoBtn = document.getElementById('todo-btn');
-const todoPanel = document.getElementById('todo-panel');
-const todoClose = document.getElementById('todo-close');
-const todoInput = document.getElementById('todo-input');
-const todoAddBtn = document.getElementById('todo-add');
-const todoList = document.getElementById('todo-list');
+const todoBtn = document.getElementById("todo-btn");
+const todoPanel = document.getElementById("todo-panel");
+const todoClose = document.getElementById("todo-close");
+const todoInput = document.getElementById("todo-input");
+const todoAddBtn = document.getElementById("todo-add");
+const todoList = document.getElementById("todo-list");
 
 // 打开面板
-todoBtn.addEventListener('click', () => {
-  todoPanel.classList.add('open');
+todoBtn.addEventListener("click", () => {
+  todoPanel.classList.add("open");
   todoInput.focus();
 });
 
 // 关闭面板
-todoClose.addEventListener('click', () => {
-  todoPanel.classList.remove('open');
+todoClose.addEventListener("click", () => {
+  todoPanel.classList.remove("open");
 });
 
 // 从 localStorage 加载 TODO
 function loadTodos() {
-  const todos = JSON.parse(localStorage.getItem('momentum_todos') || '[]');
-  todoList.innerHTML = '';
-  todos.forEach(todo => addTodoToDOM(todo.text, todo.completed));
+  const todos = JSON.parse(localStorage.getItem("momentum_todos") || "[]");
+  todoList.innerHTML = "";
+  todos.forEach((todo) => addTodoToDOM(todo.text, todo.completed));
 }
 
 // 保存 TODO 到 localStorage
 function saveTodos() {
   const todos = [];
-  todoList.querySelectorAll('.todo-item').forEach(item => {
+  todoList.querySelectorAll(".todo-item").forEach((item) => {
     todos.push({
-      text: item.querySelector('.todo-text').innerText,
-      completed: item.classList.contains('completed')
+      text: item.querySelector(".todo-text").innerText,
+      completed: item.classList.contains("completed"),
     });
   });
-  localStorage.setItem('momentum_todos', JSON.stringify(todos));
+  localStorage.setItem("momentum_todos", JSON.stringify(todos));
 }
 // 添加 TODO 到 DOM
 function addTodoToDOM(text, completed = false) {
-  const li = document.createElement('li');
-  li.className = 'todo-item' + (completed ? ' completed' : '');
+  const li = document.createElement("li");
+  li.className = "todo-item" + (completed ? " completed" : "");
 
   li.innerHTML = `
     <div class="todo-checkbox"></div>
@@ -97,20 +95,20 @@ function addTodoToDOM(text, completed = false) {
   `;
 
   // 点击完成/取消
-  const checkbox = li.querySelector('.todo-checkbox');
-  const textSpan = li.querySelector('.todo-text');
+  const checkbox = li.querySelector(".todo-checkbox");
+  const textSpan = li.querySelector(".todo-text");
 
   function toggleComplete() {
-    li.classList.toggle('completed');
+    li.classList.toggle("completed");
     saveTodos();
   }
 
-  checkbox.addEventListener('click', toggleComplete);
-  textSpan.addEventListener('click', toggleComplete);
+  checkbox.addEventListener("click", toggleComplete);
+  textSpan.addEventListener("click", toggleComplete);
 
   // 删除按钮
-  li.querySelector('.todo-delete').addEventListener('click', () => {
-    li.style.animation = 'slideOut 0.3s ease forwards';
+  li.querySelector(".todo-delete").addEventListener("click", () => {
+    li.style.animation = "slideOut 0.3s ease forwards";
     setTimeout(() => {
       li.remove();
       saveTodos();
@@ -124,25 +122,25 @@ function addTodo() {
   const text = todoInput.value.trim();
   if (text) {
     addTodoToDOM(text);
-    todoInput.value = '';
+    todoInput.value = "";
     saveTodos();
     // 滚动到底部
     todoList.scrollTop = todoList.scrollHeight;
   }
 }
 // 事件监听
-todoAddBtn.addEventListener('click', addTodo);
-todoInput.addEventListener('keypress', (e) => {
-  if (e.key === 'Enter') addTodo();
+todoAddBtn.addEventListener("click", addTodo);
+todoInput.addEventListener("keypress", (e) => {
+  if (e.key === "Enter") addTodo();
 });
 // 转义 HTML 防止 XSS
 function escapeHtml(text) {
-  const div = document.createElement('div');
+  const div = document.createElement("div");
   div.innerText = text;
   return div.innerHTML;
 }
 // 添加滑出动画样式
-const style = document.createElement('style');
+const style = document.createElement("style");
 style.innerHTML = `
   @keyframes slideOut {
     to {
@@ -154,6 +152,3 @@ style.innerHTML = `
 document.head.appendChild(style);
 // 初始化
 loadTodos();
-
-
-

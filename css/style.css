@@ -31,7 +31,7 @@ body {
 
 /* 核心数字样式：视口单位 + 范围限制，保持比例 */
 .time {
-  font-family: 'Roboto Mono', monospace;
+  font-family: "Roboto Mono", monospace;
   /* clamp(最小值, 首选值, 最大值)：兼顾自适应和极端情况 */
   font-size: 9.5vw;
   font-weight: 700;
@@ -50,7 +50,7 @@ body {
   opacity: 0.9;
   letter-spacing: clamp(-0.5px, -0.1vw, -1.5px);
   font-weight: 600;
-  font-family: 'Roboto Mono', monospace;
+  font-family: "Roboto Mono", monospace;
   max-width: 90vw;
   /* 限制最大宽度，防止超长文本溢出 */
 }
@@ -236,7 +236,7 @@ body {
 }
 
 .todo-item.completed .todo-checkbox::after {
-  content: '✓';
+  content: "✓";
   color: #333;
   font-size: 12px;
   font-weight: bold;
