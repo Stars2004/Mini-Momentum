@@ -1,66 +1,68 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>New Tab</title>
-    <link href="./css/robotomono.css" rel="stylesheet" />
-    <link href="./css/style.css" rel="stylesheet" />
-  </head>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>New Tab</title>
+        <link href="./css/robotomono.css" rel="stylesheet" />
+        <link href="./css/style.css" rel="stylesheet" />
+    </head>
 
-  <body>
-    <!-- 更换背景按钮 -->
-    <button id="change-bg-btn" class="change-bg-btn" title="更换背景">
-      <svg
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-      >
-        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-        <circle cx="8.5" cy="8.5" r="1.5"></circle>
-        <polyline points="21 15 16 10 5 21"></polyline>
-      </svg>
-    </button>
-    <input
-      type="file"
-      id="bg-file-input"
-      accept="image/*"
-      style="display: none"
-    />
+    <body>
+        <!-- 更换背景按钮 -->
+        <button id="change-bg-btn" class="change-bg-btn" title="更换背景">
+            <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+            >
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                <polyline points="21 15 16 10 5 21"></polyline>
+            </svg>
+        </button>
+        <input
+            type="file"
+            id="bg-file-input"
+            accept="image/*"
+            style="display: none"
+        />
 
-    <div class="container">
-      <!-- 时间显示容器 -->
-      <div id="time" class="time"></div>
-      <!-- 名言显示容器 -->
-      <div id="quote" class="quote"></div>
-    </div>
-    <!-- TODO 按钮 -->
-    <button id="todo-btn" class="todo-btn" title="待办事项">
-      <svg
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-      >
-        <path d="M9 11l3 3L22 4" />
-        <path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11" />
-      </svg>
-    </button>
+        <div class="container">
+            <!-- 时间显示容器 -->
+            <div id="time" class="time"></div>
+            <!-- 名言显示容器 -->
+            <div id="quote" class="quote"></div>
+        </div>
+        <!-- TODO 按钮 -->
+        <button id="todo-btn" class="todo-btn" title="待办事项">
+            <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+            >
+                <path d="M9 11l3 3L22 4" />
+                <path
+                    d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"
+                />
+            </svg>
+        </button>
 
-    <!-- TODO 面板 -->
-    <div id="todo-panel" class="todo-panel">
-      <div class="todo-header">
-        <span>FOCUS</span>
-        <button id="todo-close">×</button>
-      </div>
-      <ul id="todo-list"></ul>
-      <div class="todo-footer">
-        <input type="text" id="todo-input" placeholder="添加任务..." />
-        <button id="todo-add">+</button>
-      </div>
-    </div>
-    <!-- 引入脚本文件 -->
-    <script src="script.js"></script>
-  </body>
+        <!-- TODO 面板 -->
+        <div id="todo-panel" class="todo-panel">
+            <div class="todo-header">
+                <span>FOCUS</span>
+                <button id="todo-close">×</button>
+            </div>
+            <ul id="todo-list"></ul>
+            <div class="todo-footer">
+                <input type="text" id="todo-input" placeholder="添加任务..." />
+                <button id="todo-add">+</button>
+            </div>
+        </div>
+        <!-- 引入脚本文件 -->
+        <script src="script.js"></script>
+    </body>
 </html>

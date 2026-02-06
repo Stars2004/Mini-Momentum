@@ -1,9 +1,9 @@
 {
-  "manifest_version": 3,
-  "name": "Mini Momentum",
-  "description": "A simple Momentum-like new tab extension",
-  "version": "1.0",
-  "chrome_url_overrides": {
-    "newtab": "newtab.html"
-  }
+    "manifest_version": 3,
+    "name": "Mini Momentum",
+    "description": "A simple Momentum-like new tab extension",
+    "version": "1.0",
+    "chrome_url_overrides": {
+        "newtab": "newtab.html"
+    }
 }
